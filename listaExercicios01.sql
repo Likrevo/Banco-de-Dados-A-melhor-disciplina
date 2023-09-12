@@ -10,3 +10,7 @@ JOIN autores a ON a.id = l.autor_id WHERE a.nome = 'J.K. Rowling';
 -- Fourth
 SELECT aluno_id, nome, curso FROM alunos a
 LEFT JOIN matriculas m ON m.id  = a.id WHERE curso = "Engenharia de Software";
+
+-- Fifth
+SELECT produto, SUM(receita) AS receita_total FROM vendas 
+GROUP BY produto;
