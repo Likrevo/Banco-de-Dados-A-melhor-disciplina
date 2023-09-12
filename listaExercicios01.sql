@@ -26,3 +26,9 @@ JOIN matriculas m ON m.id = a.id GROUP BY curso;
 -- Eighth
 SELECT produto, AVG(receita) AS med_receita_prod FROM vendas
 GROUP BY produto;
+
+-- Ninth
+CREATE VIEW receita_total AS 
+SELECT produto, SUM(receita) AS receita_t_sup FROM vendas
+GROUP BY produto;
+SELECT * FROM receita_total WHERE receita_t_sup >= "10000.00";
