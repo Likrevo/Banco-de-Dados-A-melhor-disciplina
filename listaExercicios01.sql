@@ -79,3 +79,10 @@ GROUP BY produto HAVING sum(receita) = (
         GROUP BY produto 
     ) AS receita_por_produto
 );
+
+-- Nineteenth
+SELECT alunos.id AS Aluno_ID, alunos.nome 
+AS Nome_Aluno, COUNT(matriculas.id) 
+AS Numero_de_Matriculas FROM alunos
+LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id
+GROUP BY alunos.id, alunos.nome;
