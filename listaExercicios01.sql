@@ -22,3 +22,7 @@ JOIN autores a ON a.id = l.autor_id GROUP BY nome;
 -- Seventh
 SELECT curso, COUNT(a.id) AS quant_alunos FROM alunos a
 JOIN matriculas m ON m.id = a.id GROUP BY curso;
+
+-- Eighth
+SELECT produto, AVG(receita) AS med_receita_prod FROM vendas
+GROUP BY produto;
