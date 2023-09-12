@@ -86,3 +86,9 @@ AS Nome_Aluno, COUNT(matriculas.id)
 AS Numero_de_Matriculas FROM alunos
 LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id
 GROUP BY alunos.id, alunos.nome;
+
+-- Twentieth? Acabou o Telecurso 3000
+SELECT produto, COUNT(produto) AS transaciones FROM vendas 
+GROUP BY produto
+ORDER BY transaciones
+DESC LIMIT 1;
