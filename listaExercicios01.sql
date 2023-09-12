@@ -70,3 +70,12 @@ LEFT JOIN livros ON autores.id = livros.autor_id
 GROUP BY autores.id 
 ORDER BY quant_livros 
 DESC LIMIT 1;
+
+-- Seventeenth
+SELECT produto, SUM(receita) AS soma_rec FROM vendas 
+GROUP BY produto HAVING sum(receita) = (
+    SELECT min(total_da_receita FROM (
+        SELECT produto, sum(receita) AS total_da_receita FROM vendas 
+        GROUP BY produto 
+    ) AS receita_por_produto
+);
