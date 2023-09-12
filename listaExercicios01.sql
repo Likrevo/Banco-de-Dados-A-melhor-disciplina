@@ -45,3 +45,9 @@ CREATE VIEW livros_e_autores AS
 SELECT titulo, nome FROM livros l 
 JOIN autores a ON a.id = l.autor_id;
 SELECT * FROM livros_e_autores;
+
+-- Não sei falar esse inglês mas é o 12
+CREATE VIEW a_cu AS
+SELECT nome, curso FROM alunos a
+RIGHT JOIN matriculas m ON m.id = a.id;
+SELECT * FROM a_cu;
