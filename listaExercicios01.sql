@@ -18,3 +18,7 @@ GROUP BY produto;
 -- Sixth
 SELECT nome, COUNT(autor_id) AS num_total_l_a FROM livros l 
 JOIN autores a ON a.id = l.autor_id GROUP BY nome;
+
+-- Seventh
+SELECT curso, COUNT(a.id) AS quant_alunos FROM alunos a
+JOIN matriculas m ON m.id = a.id GROUP BY curso;
