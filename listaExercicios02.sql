@@ -1,1 +1,10 @@
+-- Uno
+DELIMITER //
+CREATE PROCEDURE sp_ListarAutores()
+BEGIN 
+  SELECT Nome, Sobrenome FROM Autor;
+END;
+//
 
+DELIMITER ;
+CALL sp_ListarAutores();
