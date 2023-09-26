@@ -66,6 +66,8 @@ CALL ssp_TitulosPorCategoria("Ficção Científica");
 -- Siete
 
 -- Ocho
+
+-- Nueve
 DELIMITER //
 -- A cláusula DELIMITER define o delimitador para a definição da sp.
 -- No caso, estamos usando "//" como delimitador em vez do padrão ";" para permitir múltiplas instruções.
@@ -86,7 +88,5 @@ END;
 //
 -- Isso encerra a definição da sp usando o delimitador personalizado "//".
 -- Após a definição da sp, você pode restaurar o delimitador padrão usando "DELIMITER ;".
-
--- Nueve
 
 -- Diez
