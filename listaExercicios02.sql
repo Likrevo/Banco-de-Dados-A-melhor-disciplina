@@ -50,6 +50,18 @@ DELIMITER ;
 CALL sp_LivrosAteAno(2004);
 DROP PROCEDURE sp_LivrosAteAno;
 -- Seis
+DELIMITER //
+CREATE PROCEDURE sp_TitulosPorCategoria (IN p_Categoria VARCHAR(100))
+BEGIN
+    SELECT titulo FROM Livro 
+    WHERE Categoria_ID = (SELECT Categoria_ID FROM Categoria 
+    WHERE Nome = p_Categoria);
+END
+//
+DELIMITER ;
+CALL sp_TitulosPorCategoria("Romance");
+CALL sp_TitulosPorCategoria("Autoajuda");
+CALL ssp_TitulosPorCategoria("Ficção Científica");
 
 -- Siete
 
