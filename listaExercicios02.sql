@@ -58,8 +58,6 @@ BEGIN
 END
 //
 DELIMITER ;
-CALL sp_TitulosPorCategoria("Romance");
-CALL sp_TitulosPorCategoria("Autoajuda");
 CALL ssp_TitulosPorCategoria("Ficção Científica");
 
 -- Siete
@@ -100,3 +98,13 @@ END;
 -- Após a definição da sp, você pode restaurar o delimitador padrão usando "DELIMITER ;".
 
 -- Diez
+DELIMITER //
+CREATE PROCEDURE sp_LivrosESeusAutores()
+BEGIN
+    SELECT Livro.Titulo, Autor.Nome, Autor.Sobrenome
+    FROM Livro
+    JOIN Autor_Livro ON Livro.Livro_ID = Autor_Livro.Livro_ID
+    JOIN Autor ON Autor_Livro.Autor_ID = Autor.Autor_ID;
+END //
+DELIMITER ;
+CALL sp_LivrosESeusAutores();
