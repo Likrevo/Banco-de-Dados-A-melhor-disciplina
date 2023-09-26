@@ -66,6 +66,26 @@ CALL ssp_TitulosPorCategoria("Ficção Científica");
 -- Siete
 
 -- Ocho
+DELIMITER //
+-- A cláusula DELIMITER define o delimitador para a definição da sp.
+-- No caso, estamos usando "//" como delimitador em vez do padrão ";" para permitir múltiplas instruções.
+
+CREATE PROCEDURE sp_ListarAutores()
+BEGIN 
+  -- CREATE PROCEDURE cria uma nova stored procedure chamada "sp_ListarAutores".
+
+  -- BEGIN inicia o código da stored procedure.
+
+  SELECT Nome, Sobrenome FROM Autor;
+  -- Esta é a parte principal da sp.
+  -- É uma instrução SQL que seleciona os campos "Nome" e "Sobrenome" da tabela "Autor".
+
+END;
+-- END marca o final do código da procedure.
+
+//
+-- Isso encerra a definição da sp usando o delimitador personalizado "//".
+-- Após a definição da sp, você pode restaurar o delimitador padrão usando "DELIMITER ;".
 
 -- Nueve
 
