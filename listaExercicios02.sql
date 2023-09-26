@@ -32,7 +32,6 @@ BEGIN
     GROUP BY Categoria_ID ORDER BY COUNT(Categoria_ID);
 END
 //
-
 DELIMITER ;
 CALL sp_ContarLivrosPorCategoria("Autoajuda");
 
@@ -48,7 +47,7 @@ CREATE PROCEDURE sp_LivrosAteAno(IN p_lpano INT)
 //
 DELIMITER ; 
 CALL sp_LivrosAteAno(2004);
-DROP PROCEDURE sp_LivrosAteAno;
+
 -- Seis
 DELIMITER //
 CREATE PROCEDURE sp_TitulosPorCategoria (IN p_Categoria VARCHAR(100))
@@ -66,6 +65,17 @@ CALL ssp_TitulosPorCategoria("Ficção Científica");
 -- Siete
 
 -- Ocho
+DELIMITER //
+
+CREATE PROCEDURE EncontrarAutorMaisAntigo()
+BEGIN
+    SELECT nome, Sobrenome
+    FROM Autor
+    WHERE data_nascimento = (SELECT MIN(data_nascimento) FROM Autor);
+END 
+//
+DELIMITER ;
+CALL EncontrarAutorMaisAntigo();
 
 -- Nueve
 DELIMITER //
