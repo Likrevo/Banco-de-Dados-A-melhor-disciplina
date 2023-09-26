@@ -35,3 +35,26 @@ END
 
 DELIMITER ;
 CALL sp_ContarLivrosPorCategoria("Autoajuda");
+
+-- Cuatro
+
+-- Cinco
+DELIMITER //
+CREATE PROCEDURE sp_LivrosAteAno(IN p_lpano INT)
+  BEGIN
+    SELECT Titulo, Ano_Publicacao FROM Livro
+    WHERE Ano_Publicacao <= p_lpano;
+  END
+//
+DELIMITER ; 
+CALL sp_LivrosAteAno(2004);
+DROP PROCEDURE sp_LivrosAteAno;
+-- Seis
+
+-- Siete
+
+-- Ocho
+
+-- Nueve
+
+-- Diez
